@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return '<H1>Hello World</H1>'
+	return '<H1>Hello World!</H1>'
