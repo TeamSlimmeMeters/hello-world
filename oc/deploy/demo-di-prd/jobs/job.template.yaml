@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {appName}
+  namespace: {namespace}
+  labels:
+    app: {appName}
+spec:
+  template:
+    metadata:
+      name: {appName}
+      labels:
+        app: {appName}
+      annotations:
+        sidecar.istio.io/inject: "false" # <--- Deze annotatie schakelt de service mesh aan (true) of uit (false) voor deze app/pod
+    spec:
+      containers:
+      - name: {appName}
+        image: {image}
+        args: ["P"]
+        resources:
+          limits:
+            cpu: 1
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 512Mi
+      restartPolicy: Never

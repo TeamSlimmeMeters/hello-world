@@ -1,0 +1,32 @@
+@Library('jenkins-workflow-libs@v3-happy-flow') _
+
+def buildParameterMap = [:]
+buildParameterMap['appName'] = 'sanne-test-python'
+buildParameterMap['appType'] = 'job'
+buildParameterMap['scenario'] = 'continuous-delivery'
+buildParameterMap['language'] = 'python'
+
+buildParameterMap['happyFlowLanguageVersion'] = '3.8'
+
+buildParameterMap['authCredentialsId'] = 'demo-di-ops-hana-test'
+buildParameterMap['debug'] = 'true'
+
+buildParameterMap['buildStrategy'] = ['*': [
+                    'checkout', 'prepare', 'build', 'sonar', 'unitTest', 'publish', 'containerize:kaniko',
+                    "deploy:demo-di-dev", 'auditTrail', 'securityPipeline']]
+
+
+buildParameterMap['customPodTemplate'] = [
+  containerTemplate(
+    name: 'build',
+    image: 'image-registry.openshift-image-registry.svc:5000/openshift-jenkins/openshift-jenkins-image-python-3.8@sha256:0ef057a5891e418ee97837dc87ff3301b8bfcbc2a476fe27a9021a26a301f928',
+    command: '/bin/cat',
+    ttyEnabled: true,
+	resourceRequestCpu: '100m',
+	resourceRequestMemory: '500Mi',
+	resourceLimitCpu: '100m',
+	resourceLimitMemory: '500Mi',
+  )
+]
+
+buildAndDeployGeneric(buildParameterMap)

@@ -1,0 +1,40 @@
+#!groovy
+
+library 'analytics-base-library@master'
+
+// general settings
+def generalSettings = [:]
+generalSettings['projectname'] = "sanne-test-python"
+generalSettings['namespace'] = "com.alliander.analytics-libraries"
+generalSettings['jenkinsagent'] = "linux"
+generalSettings['packagetype'] = "application"
+generalSettings['gitstrategy'] = "git-flow"
+generalSettings['majorversion'] = 0
+generalSettings['minorversion'] = 0
+
+// language settings
+def languageSettings = [:]
+languageSettings['language'] = "python"
+languageSettings['turbomode'] = true
+
+def deploySettings = [:]
+// deploy gives you the option to deploy to a server, options are:
+// "no" 	 = 	no deployment 
+// "auto"	 = 	automatically selects an environment based on the git branch and git strategy.
+// "latestP" = 	takes latest succesful master branch build and deploys to P machine.
+// "latestA" = 	in case of master-feature: takes latest successful master branch build and deploys to A machine.
+//				in case of git-flow: takes latest successful release branch build and deploys to A machine.
+// "latestT" = 	in case of master-feature: takes latest successful master branch build and deploys to T machine.
+//				in case of git-flow: takes latest successful develop branch build and deploys to T machine.
+// "latestO" = 	in case of master-feature: takes latest successful master branch build and deploys to O machine.
+//				in case of git-flow: not supported.
+deploySettings['deployCommand'] = "auto"
+
+postdeploySettings = [:]
+postdeploySettings['runPostDeployTests'] = false
+postdeploySettings['runApplicationOnce'] = false
+postdeploySettings['serviceAccount'] = null
+postdeploySettings['addEnvironmentToServiceAccount'] = false
+
+// run build, test and deploy steps
+templates(generalSettings, languageSettings, deploySettings, postdeploySettings)
