@@ -1,7 +1,7 @@
 @Library('jenkins-workflow-libs@v3-happy-flow') _
 
 def buildParameterMap = [:]
-buildParameterMap['appName'] = 'sanne-test-python'
+buildParameterMap['appName'] = 'frank-test-python'
 buildParameterMap['appType'] = 'job'
 buildParameterMap['scenario'] = 'continuous-delivery'
 buildParameterMap['language'] = 'python'

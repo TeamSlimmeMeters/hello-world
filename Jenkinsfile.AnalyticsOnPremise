@@ -4,7 +4,7 @@ library 'analytics-base-library@master'
 
 // general settings
 def generalSettings = [:]
-generalSettings['projectname'] = "sanne-test-python"
+generalSettings['projectname'] = "frank-test-python"
 generalSettings['namespace'] = "com.alliander.analytics-libraries"
 generalSettings['jenkinsagent'] = "linux"
 generalSettings['packagetype'] = "application"

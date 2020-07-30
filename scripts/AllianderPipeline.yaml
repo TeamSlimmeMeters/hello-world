@@ -1,10 +1,10 @@
 apiVersion: okd.alliander.com/v1alpha1
 kind: AllianderPipeline
 metadata:
-  name: sanne-test-python
+  name: frank-test-python
 spec:
   sourceConfig:
-    gitRepoName: sanne-test-python
+    gitRepoName: frank-test-python
     sourceSecret: di-github
     jenkinsfilePath: Jenkinsfile.OpenShift    # Optioneel, gaat standaard uit van Jenkinsfile.OpenShift
   enableWebhook: true                         # Optioneel, staat standaard op false. Zet op 'true' als je automatisch een webhook wil aanmaken. Zorg dat het webhook secret bestaat voordat je dit aan zet!

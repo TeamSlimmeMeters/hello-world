@@ -23,7 +23,7 @@ setup(
     description="A small example python package for openshift",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Alliander/sanne-test-python.git",
+    url="https://github.com/Alliander/frank-test-python.git",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

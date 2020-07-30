@@ -6,6 +6,8 @@ import logging
 
 def main():
 
+logging.getLogger(__name__).debug('Hello World')
+    
     if len(sys.argv) != 2:
         raise Exception("two arguments expected: [startpath] [environment]")
 
@@ -22,20 +24,20 @@ def main():
         console_log_only=True)
 
     # HANA TEST
-    logging.getLogger(__name__).debug("start hana test")
-    hconnector = hana_connector.HanaConnector()
-    hconnector.connect(database_settings=settings.databaseSettings['HANA'])
-    hresult = hconnector.cursor_execute('SELECT * FROM "SYS"."DUMMY"')
-    logging.getLogger(__name__).debug(hresult)
-    hconnector.close()
+    #logging.getLogger(__name__).debug("start hana test")
+    #hconnector = hana_connector.HanaConnector()
+    #hconnector.connect(database_settings=settings.databaseSettings['HANA'])
+    #hresult = hconnector.cursor_execute('SELECT * FROM "SYS"."DUMMY"')
+    #logging.getLogger(__name__).debug(hresult)
+    #hconnector.close()
     
     # ORACLE TEST
-    logging.getLogger(__name__).debug("start oracle test")
-    bconnector = oracle_connector.OracleConnector()
-    bconnector.connect(database_settings=settings.databaseSettings['BAR'])
-    bresult = bconnector.cursor_execute('SELECT 1+1 FROM dual')
-    logging.getLogger(__name__).debug(bresult)
-    bconnector.close()
+    #logging.getLogger(__name__).debug("start oracle test")
+    #bconnector = oracle_connector.OracleConnector()
+    #bconnector.connect(database_settings=settings.databaseSettings['BAR'])
+    #bresult = bconnector.cursor_execute('SELECT 1+1 FROM dual')
+    #logging.getLogger(__name__).debug(bresult)
+    #bconnector.close()
     
 
 if __name__ == "__main__":
