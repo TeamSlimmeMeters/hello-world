@@ -1,5 +1,5 @@
-from sanne_test_python.move import common, load_common_settings
-from sanne_test_python.move.connector import hana_connector, oracle_connector
+from frank_test_python.move import common, load_common_settings
+from frank_test_python.move.connector import hana_connector, oracle_connector
 import sys
 import logging
 
