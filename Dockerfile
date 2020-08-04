@@ -26,6 +26,7 @@ RUN apt-get update \
 # Install python program
 COPY ./frank_test_python /dist
 
+
 RUN pip install --upgrade pip && \
     pip install /dist/* --no-cache-dir
 
