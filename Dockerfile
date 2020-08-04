@@ -4,8 +4,8 @@ FROM python:3.8
 RUN apt-get update \
     && apt-get -y install libaio-dev
 
-#RUN apt-get update \
-#    && apt-get -y install wget unzip libaio-dev vim software-properties-common apt-transport-https apt-utils telnet bash less
+RUN apt-get update \
+    && apt-get -y install wget unzip libaio-dev vim software-properties-common apt-transport-https apt-utils telnet bash less
 
 # Install Oracle instanclient and dependencies
 # Skip for now
