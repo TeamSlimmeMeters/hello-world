@@ -1,8 +1,0 @@
-pandas>=1.0.1
-pyhdb==0.3.4
-#hdbcli==2.4.167
-#hana-ml==1.0.8.post5
-#sqlalchemy-hana==0.4.0
-#avro-python3==1.9.2.1
-cx-Oracle==7.1.2
-#pycryptodome==3.9.7
