@@ -24,7 +24,7 @@ RUN apt-get update \
 #COPY ./auth.txt .
 
 # Install python program
-COPY ./dist /dist
+COPY ./frank_test_python /dist
 
 RUN pip install --upgrade pip && \
     pip install /dist/* --no-cache-dir

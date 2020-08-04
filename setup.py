@@ -33,7 +33,7 @@ setup(
     install_requires=required,
     entry_points={
         'console_scripts': [
-            'start_application = sanne_test_python.app:main'
+            'start_application = frank_test_python.app:main'
         ]
     }
 )
