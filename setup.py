@@ -18,12 +18,12 @@ with open(os.path.join(pkg_dir, 'VERSION')) as f:
 setup(
     name=pkg_name,
     version=version,
-    author="Sanne Korzec",
-    author_email="sanne.korzec@example.com",
+    author="Frank van Roekel",
+    author_email="",
     description="A small example python package for openshift",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Alliander/frank-test-python.git",
+    url="https://github.com/Alliander/hello-world.git",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
